@@ -1,6 +1,6 @@
 from flask import Flask,request,render_template
 from flask_bootstrap import Bootstrap
-from werkzeug.contrib.fixers import ProxyFix
+from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.exceptions import BadRequest
 import os
 
