@@ -1,11 +1,13 @@
 # iGEM Measurement Validator webservice
-Lorem something something something
+
+
+Developed by the iGEM Measurement Committee
 
 ## Installation notes
 
 This webservice uses the TASBE Excel Validator as its backend.
 
-- This package is written in octave
+- This package is written in octave, which needs to be installed in addition to the python requirements
 - It can be obtained from https://github.com/TASBE/Excel_Process_Validator
 - Follow the install instructions from that repository, which include installing various octave dependencies
 
