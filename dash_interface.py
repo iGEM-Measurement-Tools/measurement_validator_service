@@ -90,7 +90,8 @@ def layout():
                         ),
                         dcc.Markdown(d("""
                             *Graphical panels to be developed*
-                            """))],
+                            """)),
+                            html.Pre(id='values-dummy', style=styles['pre'])]
                 ),
 
                 #########################
@@ -153,14 +154,17 @@ def define_callbacks():
 
     # Having a dataset and a protocol selected triggers analysis
     @app.callback(
-        dash.dependencies.Output('validation-report', 'children'),
+        [dash.dependencies.Output('validation-report', 'children'),
+         dash.dependencies.Output('values-dummy', 'children')],
         [dash.dependencies.Input('igem-dataset', 'data'),
          dash.dependencies.Input('protocol-id', 'value')])
     def process_file(filename, protocol):
         if filename and protocol:
             result = octave_validation.validate(filename, protocol)
             # in the future, will put the values into graphs as well
-            return result['report']
+            return result['report'],result['value']
+        else:
+            return None, None
 
 
 def initialize_app():

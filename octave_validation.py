@@ -33,9 +33,8 @@ def validate(filename, protocol_call=None):
         op = oct2py.Oct2Py()
         # hard-wired call for the moment, but should be using protocol_call format instead
         op.eval('pkg load io')
-        op.eval(protocol_call.format(filename))
+        value = op.eval("savejson('',{});".format(protocol_call.format(filename)))
         report = op.eval('EPVSession.to_xml();')
-        value = None # should actually be materials extracted from the run
         succeed = True
     except:
         # need to figure out how to properly handle exceptions
