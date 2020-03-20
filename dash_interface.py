@@ -5,8 +5,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 from textwrap import dedent as d
 
-import oct2py
-
 import igem_dataset
 import octave_validation
 import lxml.etree as etree

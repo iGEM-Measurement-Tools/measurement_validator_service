@@ -2,4 +2,4 @@ gunicorn
 flask
 flask_bootstrap
 dash
-oct2py
+
